@@ -11,6 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @EntityListeners(AuditingEntityListener.class)
@@ -21,9 +22,9 @@ public class BaseEntity {
 
     @CreatedDate
     @Column(updatable = false) // 등록 안되게
-    private LocalDateTime createdDate;
+    private LocalDate createdDate;
     @LastModifiedDate
-    private LocalDateTime lastModifiedDate;
+    private LocalDate lastModifiedDate;
 
     @CreatedBy
     private String createdBy;
